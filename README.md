@@ -1,2 +1,2 @@
 # LukieTTLVN
-idiot
+lukie is a idiot

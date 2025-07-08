@@ -57,6 +57,7 @@ func load_timeline(timeline: String):
 func show_next_line():
 	if timeline_index >= timeline_dialogue.size():
 		print("End of timeline: ", current_timeline)
+		self.visible = false  # Hide the entire UI when dialogue ends
 		return
 
 	var entry = timeline_dialogue[timeline_index]

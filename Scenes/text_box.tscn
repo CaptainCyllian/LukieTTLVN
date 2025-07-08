@@ -50,7 +50,7 @@ offset_bottom = 226.0
 
 [node name="choice_box" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 499.0
+offset_left = 503.0
 offset_top = 245.0
-offset_right = 539.0
+offset_right = 543.0
 offset_bottom = 285.0
