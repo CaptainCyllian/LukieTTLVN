@@ -47,3 +47,10 @@ offset_left = 8.0
 offset_top = 20.0
 offset_right = 1213.0
 offset_bottom = 226.0
+
+[node name="choice_box" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 245.0
+offset_right = 539.0
+offset_bottom = 285.0

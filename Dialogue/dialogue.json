@@ -1,5 +1,26 @@
 [
-  { "speaker": "Alice", "text": "Hey there! Welcome to our world." },
-  { "speaker": "Bob", "text": "Glad to see you're awake." },
-  { "speaker": "Alice", "text": "We’ve been waiting for you." }
+	{
+		"timeline": "intro",
+		"speaker": "Narrator",
+		"text": "You wake up in a strange place."
+	},
+	{
+		"timeline": "intro",
+		"speaker": "Narrator",
+		"text": "What will you do?",
+		"choices": [
+			{ "text": "Look around", "next_timeline": "look_around" },
+			{ "text": "Go back to sleep", "next_timeline": "sleep" }
+		]
+	},
+	{
+		"timeline": "look_around",
+		"speaker": "Narrator",
+		"text": "You see an abandoned village."
+	},
+	{
+		"timeline": "sleep",
+		"speaker": "Narrator",
+		"text": "You fall asleep and dream of dragons."
+	}
 ]
