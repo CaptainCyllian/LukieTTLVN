@@ -1,0 +1,5 @@
+[
+  { "speaker": "Alice", "text": "Hey there! Welcome to our world." },
+  { "speaker": "Bob", "text": "Glad to see you're awake." },
+  { "speaker": "Alice", "text": "We’ve been waiting for you." }
+]
