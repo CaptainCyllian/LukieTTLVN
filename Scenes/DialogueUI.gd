@@ -3,6 +3,7 @@ extends Control
 @onready var name_label = $TextboxPanel/NameLabel
 @onready var dialogue_label = $TextboxPanel/DialogueLabel
 @onready var choice_box = $choice_box
+@onready var character_sprite = $CharacterSprite  # Add your sprite node here
 
 var dialogue_data = []
 var current_timeline = "intro"
@@ -20,7 +21,6 @@ func _ready():
 	load_timeline("intro")
 
 
-# Load and parse the JSON file
 func load_dialogue(file_path: String):
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	if file == null:
@@ -37,7 +37,6 @@ func load_dialogue(file_path: String):
 	dialogue_data = result
 
 
-# Load lines that belong to a specific timeline
 func load_timeline(timeline: String):
 	current_timeline = timeline
 	timeline_index = 0
@@ -53,7 +52,6 @@ func load_timeline(timeline: String):
 	show_next_line()
 
 
-# Display the next line of dialogue or show choices
 func show_next_line():
 	if timeline_index >= timeline_dialogue.size():
 		print("End of timeline: ", current_timeline)
@@ -62,6 +60,10 @@ func show_next_line():
 
 	var entry = timeline_dialogue[timeline_index]
 	timeline_index += 1
+	
+	# Change character sprite if 'sprite' key exists in JSON
+	if entry.has("sprite"):
+		set_character_sprite(entry.sprite)
 	
 	# Check for choices
 	if entry.has("choices"):
@@ -76,7 +78,15 @@ func show_next_line():
 	type_next_character()
 
 
-# Typing effect
+func set_character_sprite(sprite_path: String) -> void:
+	# Load the texture and set it
+	var tex = load(sprite_path)
+	if tex is Texture2D:
+		character_sprite.texture = tex
+	else:
+		push_error("Failed to load texture: " + sprite_path)
+
+
 func type_next_character():
 	if char_index < full_text.length():
 		dialogue_label.text += full_text[char_index]
@@ -87,7 +97,6 @@ func type_next_character():
 		is_typing = false
 
 
-# Input for skipping type or continuing
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if is_typing:
@@ -97,7 +106,6 @@ func _input(event):
 			show_next_line()
 
 
-# Show player choices as buttons
 func show_choices(choices: Array):
 	is_typing = false
 	dialogue_label.text = ""
@@ -115,7 +123,6 @@ func show_choices(choices: Array):
 		choice_box.add_child(button)
 
 
-# Utility to clear buttons
 func queue_free_children():
 	for child in choice_box.get_children():
 		child.queue_free()

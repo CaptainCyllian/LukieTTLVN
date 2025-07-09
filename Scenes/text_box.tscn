@@ -19,17 +19,17 @@ offset_right = 1282.0
 offset_bottom = 790.0
 texture = ExtResource("2_w6krc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(649, 406)
-scale = Vector2(1.596, 1.528)
+[node name="CharacterSprite" type="Sprite2D" parent="."]
+position = Vector2(598, 313)
+scale = Vector2(0.7, 0.651)
 texture = ExtResource("3_8gqem")
 
 [node name="TextboxPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 527.0
-offset_right = 1243.0
-offset_bottom = 775.0
+offset_left = 28.0
+offset_top = 385.0
+offset_right = 1135.0
+offset_bottom = 626.0
 
 [node name="NameLabel" type="Label" parent="TextboxPanel"]
 layout_mode = 0
@@ -45,12 +45,12 @@ text = "{{NAME}}"
 layout_mode = 0
 offset_left = 8.0
 offset_top = 20.0
-offset_right = 1213.0
-offset_bottom = 226.0
+offset_right = 1052.0
+offset_bottom = 219.0
 
 [node name="choice_box" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 503.0
-offset_top = 245.0
-offset_right = 543.0
-offset_bottom = 285.0
+offset_left = 507.0
+offset_top = 103.0
+offset_right = 547.0
+offset_bottom = 143.0

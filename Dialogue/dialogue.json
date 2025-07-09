@@ -2,12 +2,14 @@
 	{
 		"timeline": "intro",
 		"speaker": "Narrator",
+		"sprite": "res://Image/Characters/Narrator/Bob.png",
 		"text": "You wake up in a strange place."
 	},
 	{
 		"timeline": "intro",
 		"speaker": "Narrator",
 		"text": "What will you do?",
+		"sprite": "res://Image/Characters/Narrator/Bob.png",
 		"choices": [
 			{ "text": "Look around", "next_timeline": "look_around" },
 			{ "text": "Go back to sleep", "next_timeline": "sleep" }
@@ -16,11 +18,14 @@
 	{
 		"timeline": "look_around",
 		"speaker": "Narrator",
+		"sprite": "res://characters/bob.png",
+		"sprite": "res://Image/Characters/Narrator/Bob.png",
 		"text": "You see an abandoned village."
 	},
 	{
 		"timeline": "sleep",
 		"speaker": "Narrator",
+		"sprite": "res://Image/Characters/Narrator/Bob.png",
 		"text": "You fall asleep and dream of dragons."
 	}
 ]
